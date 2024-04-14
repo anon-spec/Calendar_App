@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">Calendar App</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    
+    <string-array name="timeEventsData">
+        <item> 12:00 a.m.</item>
+        <item> 12:30 a.m.</item>
+        <item> 1:00 a.m.</item>
+        <item> 1:30 a.m.</item>
+        <item> 2:00 a.m.</item>
+        <item> 2:30 a.m.</item>
+        <item> 3:00 a.m.</item>
+        <item> 3:30 a.m.</item>
+        <item> 4:00 a.m.</item>
+        <item> 4:30 a.m.</item>
+        <item> 5:00 a.m.</item>
+        <item> 5:30 a.m.</item>
+        <item> 6:00 a.m.</item>
+        <item> 6:30 a.m.</item>
+        <item> 7:00 a.m.</item>
+        <item> 7:30 a.m.</item>
+        <item> 8:00 a.m.</item>
+        <item> 8:30 a.m.</item>
+        <item> 9:00 a.m.</item>
+        <item> 9:30 a.m.</item>
+        <item> 10:00 a.m.</item>
+        <item> 10:30 a.m.</item>
+        <item> 11:00 a.m.</item>
+        <item> 11:30 a.m.</item>
+        <item> 12:00 p.m.</item>
+        <item> 12:30 p.m.</item>
+        <item> 1:00 p.m.</item>
+        <item> 1:30 p.m.</item>
+        <item> 2:00 p.m.</item>
+        <item> 2:30 p.m.</item>
+        <item> 3:00 p.m.</item>
+        <item> 3:30 p.m.</item>
+        <item> 4:00 p.m.</item>
+        <item> 4:30 p.m.</item>
+        <item> 5:00 p.m.</item>
+        <item> 5:30 p.m.</item>
+        <item> 6:00 p.m.</item>
+        <item> 6:30 p.m.</item>
+        <item> 7:00 p.m.</item>
+        <item> 7:30 p.m.</item>
+        <item> 8:00 p.m.</item>
+        <item> 8:30 p.m.</item>
+        <item> 9:00 p.m.</item>
+        <item> 9:30 p.m.</item>
+        <item> 10:00 p.m.</item>
+        <item> 10:30 p.m.</item>
+        <item> 11:00 p.m.</item>
+        <item> 11:30 p.m.</item>
+    </string-array>
+
+    <string-array name="repeatEventsData">
+        <item> Never</item>
+        <item> Every Day</item>
+        <item> Every Week</item>
+        <item> Every 2 Weeks</item>
+        <item> Every Month</item>
+        <item> Every Year</item>
+    </string-array>
+
+    <string-array name="alertEventsData">
+        <item> At time of event</item>
+        <item> 5 minutes before</item>
+        <item> 10 minutes before</item>
+        <item> 15 minutes before</item>
+        <item> 30 minutes before</item>
+        <item> 1 hour before</item>
+        <item> 2 hours before</item>
+        <item> 1 day before</item>
+        <item> 2 hours before</item>
+        <item> 1 day before</item>
+        <item> 2 days before</item>
+        <item> 1 week before</item>
+    </string-array>
+
+
+
+</resources>
