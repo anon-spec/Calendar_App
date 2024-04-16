@@ -44,8 +44,8 @@ public class EventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_events); //sets screen to events page
         Date currentTime = Calendar.getInstance().getTime();
-
-        /*TextView nametextview = (TextView) findViewById(R.id.eventNameView);
+/*
+        TextView nametextview = (TextView) findViewById(R.id.eventNameView);
         nameinputText = (EditText) findViewById(R.id.eventNameInput);
 
         String eventName = (String) nameinputText.getText().toString();
@@ -69,9 +69,9 @@ public class EventActivity extends AppCompatActivity {
         notesinputText = (EditText) findViewById(R.id.eventNotesInput);
 
         String eventNotes = (String) notesinputText.getText().toString();
+*/
 
-        //time = LocalTime.now();
-        date = LocalDate.now();
+
 
         //spinner for start time
         Spinner startEventSpinner = findViewById(R.id.timeStartEventsSpinner);
@@ -89,14 +89,14 @@ public class EventActivity extends AppCompatActivity {
         Spinner repeatEventSpinner = findViewById(R.id.repeatEventsSpinner);
         ArrayAdapter<CharSequence> repeatAdapter = ArrayAdapter.createFromResource(this, R.array.repeatEventsData, android.R.layout.simple_spinner_item);
         repeatAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        endEventSpinner.setAdapter(repeatAdapter);
+        repeatEventSpinner.setAdapter(repeatAdapter);
 
         //spinner for event alerts
         Spinner alertEventSpinner = findViewById(R.id.alertEventsSpinner);
         ArrayAdapter<CharSequence> alertAdapter = ArrayAdapter.createFromResource(this, R.array.alertEventsData, android.R.layout.simple_spinner_item);
         alertAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        endEventSpinner.setAdapter(alertAdapter);
-*/
+        alertEventSpinner.setAdapter(alertAdapter);
+
         //back button
         Button backButton = findViewById(R.id.backButtonEvent);
         // Set listener for button click

@@ -130,6 +130,7 @@
         android:layout_marginStart="25dp"
         android:background="#55000000"
         android:spinnerMode="dropdown"
+
         />
 
     <Spinner

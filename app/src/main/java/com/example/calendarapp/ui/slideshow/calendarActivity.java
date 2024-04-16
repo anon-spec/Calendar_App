@@ -1,9 +1,7 @@
 package com.example.calendarapp.ui.slideshow;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CalendarView;
 import android.widget.TextView;
@@ -32,10 +30,12 @@ public class calendarActivity extends AppCompatActivity {
     TextView date_view;
     Calendar calendar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendarlayout);
+        Date currentTime = Calendar.getInstance().getTime();
 
         Button home = findViewById(R.id.home2);
         home.setOnClickListener(new View.OnClickListener() {
@@ -47,15 +47,16 @@ public class calendarActivity extends AppCompatActivity {
             }
         });
         calendarView = (CalendarView) findViewById(R.id.calendarContentMain);
+        calendarView.setDate(System.currentTimeMillis(), false, true);
         calendar = Calendar.getInstance();
-        setDate(1, 1, 2023);
 
-        getDate();
+
+
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener(){
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int day, int month, int year){
                 String Date = month + 1 + "-" + day + "-" + year;
-                date_view.setText(Date);
+                //date_view.setText(Date);
                 Toast.makeText(getBaseContext(), Date, Toast.LENGTH_SHORT).show();
             }
         });
@@ -72,28 +73,24 @@ public class calendarActivity extends AppCompatActivity {
             }
         });
 
-        Date currentTime = Calendar.getInstance().getTime();
+
         Button todayButton = findViewById(R.id.Today);
         todayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { //changes to current date
-                //setDate(currentTime);
-                Intent eventScreen = new Intent(calendarActivity.this, EventActivity.class);
-                startActivity(eventScreen);
+                calendarView.setDate(System.currentTimeMillis(), false, true);
             }
         });
 
         //Text-to-speech button, creates notification indicating "Recording..."
 
         Button texttospeechButton = findViewById(R.id.Text_To_Speech);
-        texttospeechButton.setOnTouchListener(new View.OnTouchListener() {
+        texttospeechButton.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                while (event.getAction() == MotionEvent.ACTION_DOWN){
-                    Toast.makeText(getBaseContext(), "Recording...", Toast.LENGTH_SHORT).show();
-                }
-
-                return false;
+            public boolean onLongClick(View v) {
+                Toast.makeText(getBaseContext(), "Recording...", Toast.LENGTH_SHORT).show();
+                //implement code here where user is recorded
+                return true;
             }
         });
 
