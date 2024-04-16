@@ -14,6 +14,11 @@
     <string name="menu_events">Events</string>
     <string name="menu_notifications">Notifications</string>
 
+    <string name="Starts">Starts</string>
+    <string name="Ends">Ends</string>
+    <string name="Repeat">Repeat</string>
+    <string name="Alerts">Alerts</string>
+
 
 
     <string-array name="timeEventsData">

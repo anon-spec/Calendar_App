@@ -55,7 +55,7 @@ public class calendarActivity extends AppCompatActivity {
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener(){
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int day, int month, int year){
-                String Date = month + 1 + "-" + day + "-" + year;
+                String Date = month + 1 + "-" + year + "-" + day;
                 //date_view.setText(Date);
                 Toast.makeText(getBaseContext(), Date, Toast.LENGTH_SHORT).show();
             }
