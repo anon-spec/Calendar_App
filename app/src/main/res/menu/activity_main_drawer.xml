@@ -8,7 +8,7 @@
             android:id="@+id/nav_calendar"
             android:icon="@android:drawable/ic_menu_my_calendar"
             android:title="Calendar"
-            android:onClick="viewCalendar"/>
+            />
         <item
             android:id="@+id/nav_events"
             android:icon="@android:drawable/ic_dialog_alert"
@@ -17,14 +17,6 @@
             android:id="@+id/nav_notifications"
             android:icon="@android:drawable/ic_menu_recent_history"
             android:title="Notifications" />
-        <item
-            android:id="@+id/nav_sync"
-            android:icon="@android:drawable/ic_popup_sync"
-            android:title="Sync" />
-        <item
-            android:id="@+id/nav_settings"
-            android:icon="@android:drawable/ic_menu_manage"
-            android:title="Settings" />
 
     </group>
 

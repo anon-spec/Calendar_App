@@ -10,7 +10,12 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    
+    <string name="menu_calendar">Calendar</string>
+    <string name="menu_events">Events</string>
+    <string name="menu_notifications">Notifications</string>
+
+
+
     <string-array name="timeEventsData">
         <item> 12:00 a.m.</item>
         <item> 12:30 a.m.</item>

@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
         setSupportActionBar(binding.appBarMain.toolbar);
         binding.appBarMain.toolbar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,98 +52,27 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_calendar, R.id.nav_events, R.id.nav_notifications, R.id.nav_sync, R.id.nav_settings)
+                R.id.nav_calendar, R.id.nav_events, R.id.nav_notifications)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-        //Calendar
-        Button buttonCalendar = findViewById(R.id.nav_calendar);
-        // Set listener for button click
-        buttonCalendar.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            viewCalendar();
-        }
-        });
-
-        //Events
-        Button buttonEvents = findViewById(R.id.nav_events);
-        // Set listener for button click
-        buttonEvents.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewEvents();
-            }
-        });
-
-        //Notifications
-        Button buttonNotifications = findViewById(R.id.nav_notifications);
-        // Set listener for button click
-        buttonNotifications.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewNotifications();
-            }
-        });
-
-        //Settings
-        Button buttonSettings = findViewById(R.id.nav_settings);
-        // Set listener for button click
-        buttonSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewSettings();
-            }
-        });
-        }
-
-
-   //changes screen to Calendar
-    public void viewCalendar(){
-        // Navigate to th e calendar screen.xml screen
-        NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment_content_main);
-        navController.navigate(R.id.nav_calendar);
-        setContentView(R.layout.calendarlayout);
     }
 
 
 
-    //changes screen to Events
-    public void viewEvents() {
-        NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment_content_main);
-        navController.navigate(R.id.nav_events);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 
-    //changes screen to notifications
-    public void viewNotifications() {
-        NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment_content_main);
-        navController.navigate(R.id.nav_notifications); //change these nav screens to new notification screen that has not been made yet
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+                || super.onSupportNavigateUp();
     }
-
-    //changes screen to settings
-    public void viewSettings() {
-        NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment_content_main);
-        navController.navigate(R.id.nav_settings); //change these nav screens to new settings screen that has not been made yet
-    }
-
-
-        @Override
-        public boolean onCreateOptionsMenu (Menu menu){
-            // Inflate the menu; this adds items to the action bar if it is present.
-            getMenuInflater().inflate(R.menu.main, menu);
-            return true;
-        }
-
-
-        @Override
-        public boolean onSupportNavigateUp () {
-            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-            return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                    || super.onSupportNavigateUp();
-        }
-
-
 }

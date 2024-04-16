@@ -6,9 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
 
-    <include layout="@layout/toolbar"
-        />
-
     <Button
         android:id="@+id/backButtonNotifications"
         android:layout_width="60dp"
@@ -16,18 +13,6 @@
         android:background="#55000000"
         android:text=""
         app:icon="@android:drawable/ic_menu_revert"
-        />
-
-    <TextView
-        android:id="@+id/notificationTitle"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="70dp"
-        android:layout_gravity="start"
-        android:text="Notifications"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:gravity="center"
         />
 
     <TextView

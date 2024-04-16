@@ -31,6 +31,8 @@
         app:layout_constraintTop_toTopOf="parent">
     </CalendarView>
 
+
+
     <TextView
         android:id="@+id/event_view"
         android:layout_width="409dp"

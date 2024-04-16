@@ -28,7 +28,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <include layout="@layout/content_main" />
+
 
 
 
@@ -39,6 +39,7 @@
         android:background="@android:color/white"
         android:layout_gravity="bottom"
         />
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
