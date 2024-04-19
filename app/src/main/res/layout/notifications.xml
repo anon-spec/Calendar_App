@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
 
+    <include layout="@layout/toolbar"/>
     <Button
         android:id="@+id/backButtonNotifications"
         android:layout_width="60dp"
@@ -17,9 +18,8 @@
 
     <TextView
         android:id="@+id/notification1"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="25dp"
         android:layout_marginTop="100dp"
         android:gravity="center"
         android:text="TextView"
@@ -38,9 +38,8 @@
 
     <TextView
         android:id="@+id/notification2"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="25dp"
         android:layout_marginTop="148dp"
         android:gravity="center"
         android:text="TextView"
@@ -58,9 +57,8 @@
 
     <TextView
         android:id="@+id/notification3"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="25dp"
         android:layout_marginTop="196dp"
         android:gravity="center"
         android:text="TextView"
@@ -78,9 +76,8 @@
 
     <TextView
         android:id="@+id/notification4"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="25dp"
         android:layout_marginTop="244dp"
         android:gravity="center"
         android:text="TextView"
@@ -98,9 +95,8 @@
 
     <TextView
         android:id="@+id/notification5"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="25dp"
         android:layout_marginTop="292dp"
         android:gravity="center"
         android:text="TextView"
@@ -118,9 +114,8 @@
 
     <TextView
         android:id="@+id/notification6"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="25dp"
         android:layout_marginTop="340dp"
         android:gravity="center"
         android:text="TextView"
@@ -138,9 +133,8 @@
 
     <TextView
         android:id="@+id/notification7"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="25dp"
         android:layout_marginTop="388dp"
         android:gravity="center"
         android:text="TextView"
@@ -158,9 +152,8 @@
 
     <TextView
         android:id="@+id/notification8"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="25dp"
         android:layout_marginTop="436dp"
         android:gravity="center"
         android:text="TextView"
@@ -178,9 +171,8 @@
 
     <TextView
         android:id="@+id/notification9"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="25dp"
         android:layout_marginTop="484dp"
         android:gravity="center"
         android:text="TextView"
@@ -198,9 +190,8 @@
 
     <TextView
         android:id="@+id/notification10"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="25dp"
         android:layout_marginTop="532dp"
         android:gravity="center"
         android:text="TextView"

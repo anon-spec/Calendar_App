@@ -3,9 +3,13 @@ package com.example.calendarapp.ui.home;
 import com.example.calendarapp.MainActivity;
 
 import android.content.Intent;
+import android.media.metrics.Event;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View;
@@ -15,6 +19,7 @@ import com.example.calendarapp.ui.slideshow.calendarActivity;
 import android.widget.Spinner;
 
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -25,9 +30,10 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 
 
-public class EventActivity extends AppCompatActivity {
+public class EventActivity extends calendarActivity {
     TextView textview;
     EditText nameinputText;
     EditText locationinputText;
@@ -43,7 +49,7 @@ public class EventActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_events); //sets screen to events page
-        Date currentTime = Calendar.getInstance().getTime();
+
 /*
         TextView nametextview = (TextView) findViewById(R.id.eventNameView);
         nameinputText = (EditText) findViewById(R.id.eventNameInput);
@@ -71,6 +77,12 @@ public class EventActivity extends AppCompatActivity {
         String eventNotes = (String) notesinputText.getText().toString();
 */
 
+        nameinputText = (EditText) findViewById(R.id.eventNameInput);
+        String fieldValue = nameinputText.getText().toString();
+
+
+
+
 
 
         //spinner for start time
@@ -78,12 +90,19 @@ public class EventActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> startAdapter = ArrayAdapter.createFromResource(this, R.array.timeEventsData, android.R.layout.simple_spinner_item);
         startAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         startEventSpinner.setAdapter(startAdapter);
+        //gets data from selected item in spinner
+        String startEventSpinnerData = startEventSpinner.getSelectedItem().toString();
+
+
 
         //spinner for end time
         Spinner endEventSpinner = findViewById(R.id.timeEndEventsSpinner);
         ArrayAdapter<CharSequence> endAdapter = ArrayAdapter.createFromResource(this, R.array.timeEventsData, android.R.layout.simple_spinner_item);
         endAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         endEventSpinner.setAdapter(endAdapter);
+        //gets data from selected item in spinner
+        String endEventSpinnerData = endEventSpinner.getSelectedItem().toString();
+
 
         //spinner to repeat events
         Spinner repeatEventSpinner = findViewById(R.id.repeatEventsSpinner);
@@ -113,17 +132,38 @@ public class EventActivity extends AppCompatActivity {
         addEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //add code here to save event info to at specific date
+                //save event info to at specific date
+                String fieldValue = nameinputText.getText().toString();
+                //addEvent(fieldValue);
 
-                Intent eventScreen = new Intent(EventActivity.this, calendarActivity.class);
-                startActivity(eventScreen);
+                Intent test = new Intent(EventActivity.this, calendarActivity.class);
+                test.putExtra("key", fieldValue);
+                test.putExtra("timeKey", startEventSpinnerData);
+                startActivity(test);
+                finish();
 
             }
         });
+        /*calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int day, int month, int year) {
+                String Date = month + 1 + "-" + year + "-" + day;
+                addEvent(Date, fieldValue);
+
+            }
+
+
+        });
+        */
 
 
 
     }
+
+    public void addEvent(String key, String value){
+        Intent test = new Intent(EventActivity.this, calendarActivity.class);
+        test.putExtra(key, value);
+        startActivity(test);
+        finish();
+    }
 }
-
-
